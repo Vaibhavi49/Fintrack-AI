@@ -30,10 +30,7 @@ The application focuses on **simplicity + intelligence** — enabling users to m
   Monitor budget vs spending  
 
 - 📜 **Transaction History**  
-  Filter and track all records  
-
-- 🌙 **Dark Mode**  
-  Clean UI with theme switching  
+  Filter and track all records   
 
 ---
 
