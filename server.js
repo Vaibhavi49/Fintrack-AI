@@ -23,8 +23,8 @@ app.post("/transactions", (req, res) => {
 });
 
 //  GET ALL TRANSACTIONS
-app.get("/transactions", (req, res) => {
-  res.json(transactions);
+app.get("/", (req, res) => {
+  res.send("FinTrack AI Backend is running 🚀");
 });
 
 // DELETE TRANSACTION
@@ -63,6 +63,8 @@ app.post("/chat", (req, res) => {
 });
 
 // START SERVER
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log("Server running on port", PORT);
 });
