@@ -794,10 +794,10 @@ function addTx() {
 
   document.getElementById('amount').value = '';
 }
-  async function deleteTx(id) {
-  await fetch(`https://fintrack-ai-nplt.onrender.com/transaction/${id}`, {
-    method: "DELETE"
-  });
+  function deleteTx(id) {
+  txs = txs.filter(t => t.id !== id);
+  save();
+  render();
 }
 
   function render() {
