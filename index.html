@@ -749,6 +749,8 @@
   };
   const BAR_COLORS = ['#8a9e7b','#c4907a','#9b85c0','#7a9eb8','#c4b06a','#70b598'];
 
+  const BASE_URL = "https://fintrack-ai-nplt.onrender.com";
+
   function getColor(cat) {
     return COLORS[(cat||'').toLowerCase().trim()] || COLORS.default;
   }
@@ -778,7 +780,7 @@
 
   if (!amount || amount <= 0 || !category || !date) return;
 
-  await fetch("http://localhost:3000/transactions", {
+  await fetch("https://fintrack-ai-nplt.onrender.com/transaction", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -790,12 +792,15 @@
   fetchTxs(); // reload from backend
 }
 async function fetchTxs() {
-  const res = await fetch("http://localhost:3000/transactions");
-  txs = await res.json();
+  const res = await fetch("https://fintrack-ai-nplt.onrender.com/");
+  const data = await res.json();
+
+  txs = Array.isArray(data) ? data : data.transactions || [];
+  //txs = await res.json();
   render();
 }
   async function deleteTx(id) {
-  await fetch(`http://localhost:3000/transactions/${id}`, {
+  await fetch(`https://fintrack-ai-nplt.onrender.com/transaction/${id}`, {
     method: "DELETE"
   });
   fetchTxs();
@@ -838,7 +843,7 @@ async function fetchTxs() {
           <div class="tx-date">${fmtDate(t.date)}</div>
         </div>
         <div class="tx-amt">${fmt(t.amount)}</div>
-        <button class="tx-del" onclick="deleteTx(${t.id})" title="Remove">×</button>
+        <button class="tx-del" onclick="deleteTx('${t.id || t._id || ''}')" title="Remove">×</button>
       `;
       list.appendChild(div);
     });
@@ -944,7 +949,7 @@ async function fetchTxs() {
   input.value = '';
 
   try {
-    const res = await fetch('http://localhost:3000/chat', {
+    const res = await fetch('https://fintrack-ai-nplt.onrender.com/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: text })
@@ -963,6 +968,7 @@ async function fetchTxs() {
   });
 
   fetchTxs();
+  setInterval(fetchTxs, 5000);
 </script>
 </body>
 </html>
