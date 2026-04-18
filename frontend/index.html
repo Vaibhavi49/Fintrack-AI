@@ -625,6 +625,7 @@
 <!-- Navbar -->
 <nav class="navbar">
   <div class="nav-brand">
+     <div class="logo">FT</div>
     <div class="nav-dot"></div>
     Fin<span>track</span> AI
   </div>
@@ -633,11 +634,6 @@
     <span class="nav-pill">Vaibhavi.</span>
   </div>
 </nav>
-//logo
-<div class="nav-brand">
-  <div class="logo">FT</div>
-  Fin<span>track</span> AI
-</div>
 <!-- Main -->
 <main>
 
@@ -855,7 +851,7 @@ function addTx() {
           <div class="tx-date">${fmtDate(t.date)}</div>
         </div>
         <div class="tx-amt">${fmt(t.amount)}</div>
-        <button class="tx-del" onclick="deleteTx('${t.id || t._id || ''}')" title="Remove">×</button>
+        <button class="tx-del" onclick="deleteTx(${t.id})" title="Remove">×</button>
       `;
       list.appendChild(div);
     });
