@@ -773,37 +773,31 @@
   function save() { localStorage.setItem('ft_txs', JSON.stringify(txs)); }
 
   /* ── Transactions ── */
-  async function addTx() {
+ /* ── Transactions ── */
+function addTx() {
   const amount   = parseInt(document.getElementById('amount').value);
   const category = document.getElementById('category').value.trim();
   const date     = document.getElementById('date').value;
 
   if (!amount || amount <= 0 || !category || !date) return;
 
-  await fetch("https://fintrack-ai-nplt.onrender.com/transaction", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ amount, category, date })
-  });
+  const tx = {
+    id: Date.now(),
+    amount,
+    category,
+    date
+  };
+
+  txs.unshift(tx);
+  save();
+  render();
 
   document.getElementById('amount').value = '';
-  fetchTxs(); // reload from backend
-}
-async function fetchTxs() {
-  const res = await fetch("https://fintrack-ai-nplt.onrender.com/");
-  const data = await res.json();
-
-  txs = Array.isArray(data) ? data : data.transactions || [];
-  //txs = await res.json();
-  render();
 }
   async function deleteTx(id) {
   await fetch(`https://fintrack-ai-nplt.onrender.com/transaction/${id}`, {
     method: "DELETE"
   });
-  fetchTxs();
 }
 
   function render() {
@@ -966,9 +960,6 @@ async function fetchTxs() {
   document.addEventListener('keydown', e => {
     if (e.key === 'Enter' && document.activeElement !== document.getElementById('chat-input')) addTx();
   });
-
-  fetchTxs();
-  setInterval(fetchTxs, 5000);
 </script>
 </body>
 </html>
