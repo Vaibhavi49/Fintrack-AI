@@ -1,46 +1,75 @@
-FinTrack AI
+FinTrack-AI
+AI-Powered Personal Finance & Fraud Detection System
 
-A minimal, elegant personal finance tracker with an AI-powered advisor.
+👉 Live Demo: Open FinTrack-AI
 
-🔗 Live Demo:
-https://fintrack-q3gfvskgq-vaibhavi49s-projects.vercel.app
+🚀 Overview
 
-🌿 Overview
+FinTrack-AI is a browser-based fintech application that helps users track transactions, analyze spending behavior, and detect suspicious patterns using AI-driven logic.
 
-FinTrack AI helps users track daily expenses, analyze spending habits, and interact with an AI assistant for financial insights.
+The application focuses on simplicity + intelligence — allowing users to manage finances without complex setups while still gaining meaningful financial insights.
 
-Built as a full-stack project, it combines a clean UI with backend APIs to simulate a real-world fintech product experience.
+Unlike traditional systems, this app uses behavioral analysis and pattern detection to provide smarter financial insights and anomaly detection.
 
-✨ Features
-➕ Add transactions (amount, category, date)
-🗑️ Delete transactions
-📊 Real-time expense tracking
-📈 Category-wise spending breakdown
-🧠 AI-powered finance chat assistant
-💾 Local storage support
-🌐 Fully deployed (Vercel + Render)
-🧱 Tech Stack
+✨ Key Features
+💸 Smart Expense Tracking
+Add transactions instantly with category-based classification
+🧠 AI Insights Engine
+Detects spending patterns and provides personalized recommendations
+📊 Interactive Dashboard
+Visual charts (bar + donut) for real-time financial insights
+⚠️ Anomaly Detection
+Flags unusual transactions based on behavioral patterns
+🎯 Goal Tracking System
+Monitor spending vs budget with dynamic progress indicators
+📜 Transaction History
+Search, filter, and sort all financial records
+🌙 Dark Mode Support
+Clean UI with theme switching
+🧠 How It Works
+1. Data Input
 
-Frontend
+Users add transactions manually via a simple interface
 
-HTML
-CSS (custom UI + glassmorphism)
-JavaScript (Vanilla)
+2. Processing
+Categorization of transactions
+Storage (local/browser-based)
+3. AI Logic
 
-Backend
+The system analyzes:
 
-Node.js
-Express.js
+Spending dominance
+Category concentration
+Budget usage
+Outlier transactions
+4. Output
+Insights
+Alerts
+Visual analytics
+🧪 AI Insight Logic (Core Idea)
 
-Deployment
+The system uses behavioral signals like:
 
-Vercel (Frontend)
-Render (Backend)
-🏗️ Architecture
-Frontend (Vercel)
-       ↓
-   Fetch API
-       ↓
-Backend (Render - Node.js/Express)
-       ↓
- In-memory storage
+High spending in one category → ⚠️ warning
+Overspending budget → 🔴 alert
+Unusual transaction → 🚨 anomaly flag
+
+Example logic:
+
+dominance = (category_spending / total_spending) * 100
+
+This allows detection of abnormal patterns without requiring heavy ML infrastructure.
+
+🛠️ Tech Stack
+Frontend: HTML, CSS, JavaScript
+Visualization: Chart.js
+State Management: Vanilla JS
+Storage: LocalStorage (client-side)
+Deployment: Vercel
+📂 Project Structure
+FinTrack-AI/
+│── index.html        # UI structure  
+│── app.js            # Core logic & AI engine  
+│── styles.css        # Styling  
+│── assets/           # Icons & images  
+│── README.md         # Documentation  
