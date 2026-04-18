@@ -23,9 +23,10 @@ app.post("/transactions", (req, res) => {
 });
 
 //  GET ALL TRANSACTIONS
-app.get("/", (req, res) => {
-  res.send("FinTrack AI Backend is running 🚀");
+app.get("/transaction", (req, res) => {
+  res.json(txs);
 });
+let txs = [];
 
 // DELETE TRANSACTION
 app.delete("/transactions/:id", (req, res) => {
