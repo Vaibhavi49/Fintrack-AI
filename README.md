@@ -1,75 +1,66 @@
-FinTrack-AI
-AI-Powered Personal Finance & Fraud Detection System
+# 💳 FinTrack-AI  
+### AI-Powered Personal Finance & Fraud Detection System  
 
-👉 Live Demo: Open FinTrack-AI
+👉 **Live Demo:** https://fintrack-q3gfvskgq-vaibhavi49s-projects.vercel.app  
 
-🚀 Overview
+---
 
-FinTrack-AI is a browser-based fintech application that helps users track transactions, analyze spending behavior, and detect suspicious patterns using AI-driven logic.
+## 🚀 Overview  
+**FinTrack-AI** is a browser-based fintech application that helps users track transactions, analyze spending behavior, and detect suspicious patterns using AI-driven logic.
 
-The application focuses on simplicity + intelligence — allowing users to manage finances without complex setups while still gaining meaningful financial insights.
+The application focuses on **simplicity + intelligence** — enabling users to manage finances easily while still gaining meaningful insights.
 
-Unlike traditional systems, this app uses behavioral analysis and pattern detection to provide smarter financial insights and anomaly detection.
+---
 
-✨ Key Features
-💸 Smart Expense Tracking
-Add transactions instantly with category-based classification
-🧠 AI Insights Engine
-Detects spending patterns and provides personalized recommendations
-📊 Interactive Dashboard
-Visual charts (bar + donut) for real-time financial insights
-⚠️ Anomaly Detection
-Flags unusual transactions based on behavioral patterns
-🎯 Goal Tracking System
-Monitor spending vs budget with dynamic progress indicators
-📜 Transaction History
-Search, filter, and sort all financial records
-🌙 Dark Mode Support
-Clean UI with theme switching
-🧠 How It Works
-1. Data Input
+## ✨ Key Features  
 
-Users add transactions manually via a simple interface
+- 💸 **Smart Expense Tracking**  
+  Add transactions with category-based classification  
 
-2. Processing
-Categorization of transactions
-Storage (local/browser-based)
-3. AI Logic
+- 🧠 **AI Insights Engine**  
+  Detects spending patterns and gives recommendations  
 
-The system analyzes:
+- 📊 **Interactive Dashboard**  
+  Real-time charts (bar + donut) for insights  
 
-Spending dominance
-Category concentration
-Budget usage
-Outlier transactions
-4. Output
-Insights
-Alerts
-Visual analytics
-🧪 AI Insight Logic (Core Idea)
+- ⚠️ **Anomaly Detection**  
+  Flags unusual transactions  
 
-The system uses behavioral signals like:
+- 🎯 **Goal Tracking**  
+  Monitor budget vs spending  
 
-High spending in one category → ⚠️ warning
-Overspending budget → 🔴 alert
-Unusual transaction → 🚨 anomaly flag
+- 📜 **Transaction History**  
+  Filter and track all records  
 
-Example logic:
+- 🌙 **Dark Mode**  
+  Clean UI with theme switching  
 
-dominance = (category_spending / total_spending) * 100
+---
 
-This allows detection of abnormal patterns without requiring heavy ML infrastructure.
+## 🧠 How It Works  
 
-🛠️ Tech Stack
-Frontend: HTML, CSS, JavaScript
-Visualization: Chart.js
-State Management: Vanilla JS
-Storage: LocalStorage (client-side)
-Deployment: Vercel
-📂 Project Structure
-FinTrack-AI/
-│── index.html        # UI structure  
-│── app.js            # Core logic & AI engine  
-│── styles.css        # Styling  
-│── assets/           # Icons & images  
-│── README.md         # Documentation  
+### 1. Data Input  
+Users add transactions manually  
+
+### 2. Processing  
+- Categorization  
+- Local storage handling  
+
+### 3. AI Logic  
+Analyzes:  
+- Spending dominance  
+- Category concentration  
+- Budget usage  
+- Outliers  
+
+### 4. Output  
+- Insights  
+- Alerts  
+- Visual analytics  
+
+---
+
+## 🧪 Core Logic  
+
+```js
+dominance = (category_spending / total_spending) * 100;
